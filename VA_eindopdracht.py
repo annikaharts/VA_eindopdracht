@@ -374,7 +374,7 @@ plt.show()
 st.pyplot(fig11)
 # print(regressie1.summary())
 # regressie1.summary(print_fn=lambda x: st.text(x))
-image1 = Image.open('Regressie ZOUT.png')
+image1 = Image.open('Regressie ZOUT.PNG')
 st.image(image1, caption='Summary zout')
 
 
@@ -390,7 +390,7 @@ plt.show()
 st.pyplot(fig12)
 # print(regressie2.summary())
 # regressie2.summary(print_fn=lambda x: st.text(x))
-image2 = Image.open('Regressie SUIKER.png')
+image2 = Image.open('Regressie SUIKER.PNG')
 st.image(image2, caption='Summary suiker')
 
 
