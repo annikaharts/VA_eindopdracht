@@ -374,6 +374,8 @@ plt.show()
 st.pyplot(fig11)
 # print(regressie1.summary())
 # regressie1.summary(print_fn=lambda x: st.text(x))
+image1 = Image.open('Regressie ZOUT.png')
+st.image(image1, caption='Summary zout')
 
 
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
@@ -388,9 +390,9 @@ plt.show()
 st.pyplot(fig12)
 # print(regressie2.summary())
 # regressie2.summary(print_fn=lambda x: st.text(x))
+image2 = Image.open('Regressie SUIKER.png')
+st.image(image2, caption='Summary suiker')
 
-image = Image.open('Regressie ZOUT.jpg')
-st.image(image, caption='Summary zout')
 
 
 # <a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=35ad6ba8-4d16-4527-85ba-cb0e5bb1ec9c' target="_blank">
