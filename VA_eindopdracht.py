@@ -2,9 +2,6 @@
 # coding: utf-8
 
 # In[ ]:
-
-get_ipython().system('pip install statsmodels')
-
 #import packages
 import streamlit as st
 
