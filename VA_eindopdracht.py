@@ -22,7 +22,7 @@ import folium
 from folium import plugins
 from folium.plugins import MarkerCluster
 import streamlit_folium as st_folium
-from strealit_folium import folium_static
+from streamlit_folium import folium_static
 
 
 # # API populaire koffie's met ingrediënten
