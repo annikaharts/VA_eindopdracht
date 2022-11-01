@@ -155,7 +155,7 @@ for row in df_points.itertuples():
 
 folium.LayerControl().add_to(mymap);
 
-mymap
+# mymap
 st_data = folium_static(mymap)
 
 
