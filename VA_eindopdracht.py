@@ -24,6 +24,7 @@ from folium.plugins import MarkerCluster
 import streamlit_folium as st_folium
 from streamlit_folium import folium_static
 
+showWarningOnDirectExecution = false
 
 # # API populaire koffie's met ingrediënten
 
