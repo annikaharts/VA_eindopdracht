@@ -2,6 +2,9 @@
 # coding: utf-8
 
 # In[ ]:
+st.title('2022-2023 sem-1 VA: Dashboard')
+st.header('Starbucks')
+st.subheader('Annika & Estelle')
 #import packages
 import streamlit as st
 
@@ -27,6 +30,7 @@ from streamlit_folium import folium_static
 from PIL import Image
 
 # # API populaire koffie's met ingrediënten
+st.subheader(" API populaire koffie's met ingrediënten")
 
 # In[19]:
 
@@ -83,7 +87,7 @@ st.plotly_chart(fig1)
 
 
 # # Map
-
+st.subheader("Map")
 # In[4]:
 
 
@@ -93,7 +97,8 @@ world_wide.dropna()
 world_wide.notnull().sum()
 world_wide.City.value_counts().head(20)
 wereld_dataset =world_wide.iloc[-5:]
-wereld_dataset
+
+st.dataframe(wereld_dataset)
 
 # In[20]:
 
@@ -163,6 +168,7 @@ st_data = folium_static(mymap)
 
 
 # # Starbucks ingredienten
+st.subheader("Starbucks ingredienten")
 
 # In[8]:
 
@@ -361,6 +367,7 @@ st.pyplot(fig10)
 
 
 # In[32]:
+st.subheader("Regressie op variabelen ingredienten")
 
 
 regressie1 = ols(formula="Calories ~ Sodium", data=starbucks_drinkMenu).fit()
