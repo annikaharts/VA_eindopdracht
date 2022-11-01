@@ -371,8 +371,8 @@ ax1.set(xlabel='Zout (g)', ylabel="Aantal calorieën")
 ax1.set(title="Voorspelling aantal calorieën per hoeveelheid zout in grammen")
 plt.show()
 st.pyplot(fig11)
-print(regressie1.summary())
-regressie1.summary(print_fn=lambda x: st.text(x))
+# print(regressie1.summary())
+# regressie1.summary(print_fn=lambda x: st.text(x))
 
 
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
@@ -385,8 +385,8 @@ ax3.set(xlabel='Suiker (g)', ylabel="Aantal calorieën")
 ax3.set(title="Voorspelling aantal calorieën per hoeveelheid suiker in grammen")
 plt.show()
 st.pyplot(fig12)
-print(regressie2.summary())
-regressie2.summary(print_fn=lambda x: st.text(x))
+# print(regressie2.summary())
+# regressie2.summary(print_fn=lambda x: st.text(x))
 
 
 
