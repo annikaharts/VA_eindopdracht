@@ -92,7 +92,8 @@ world_wide.notnull().sum()
 world_wide.dropna()
 world_wide.notnull().sum()
 world_wide.City.value_counts().head(20)
-
+wereld_dataset =world_wide.iloc[-5:]
+wereld_dataset
 
 # In[20]:
 
