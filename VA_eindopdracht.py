@@ -2,9 +2,7 @@
 # coding: utf-8
 
 # In[ ]:
-st.title('2022-2023 sem-1 VA: Dashboard')
-st.header('Starbucks')
-st.subheader('Annika & Estelle')
+
 #import packages
 import streamlit as st
 
@@ -28,6 +26,10 @@ import streamlit_folium as st_folium
 from streamlit_folium import folium_static
 
 from PIL import Image
+
+st.title('2022-2023 sem-1 VA: Dashboard')
+st.header('Starbucks')
+st.subheader('Annika & Estelle')
 
 # # API populaire koffie's met ingrediënten
 st.subheader(" API populaire koffie's met ingrediënten")
@@ -75,6 +77,12 @@ df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replac
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('Blended ice', 'Ice')
 
 df_coffee_exploded = df_coffee_exploded.groupby('ingredients')['title'].count().sort_values(ascending=False).reset_index()
+
+lijst_ingredienten_totaal = df_coffee_exploded['ingredients'].unique()
+lijst_ingredienten_totaal = pd.DataFrame(lijst_ingredienten_totaal)
+# print(lijst_ingredienten_totaal)
+
+st.dataframe(lijst_ingredienten_totaal)
 
 fig1 = px.bar(df_coffee_exploded, x='ingredients', y='title', text='title')
 fig1.update_layout( 
