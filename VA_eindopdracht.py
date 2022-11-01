@@ -24,6 +24,8 @@ from folium.plugins import MarkerCluster
 import streamlit_folium as st_folium
 from streamlit_folium import folium_static
 
+from PIL import Image
+
 # # API populaire koffie's met ingrediënten
 
 # In[19]:
@@ -387,8 +389,8 @@ st.pyplot(fig12)
 # print(regressie2.summary())
 # regressie2.summary(print_fn=lambda x: st.text(x))
 
-
-
+image = Image.open('Regressie ZOUT.jpg')
+st.image(image, caption='Summary zout')
 
 
 # <a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=35ad6ba8-4d16-4527-85ba-cb0e5bb1ec9c' target="_blank">
