@@ -3,11 +3,14 @@
 
 # In[ ]:
 
+import streamlit as st
+
+
 #import packages
 import pandas as pd
 import requests
 import pandas as pd
-# import geopandas as gpd
+import geopandas as gpd
 import plotly.express as px
 import plotly.graph_objs as go
 import plotly.io as pio
@@ -21,7 +24,6 @@ import folium
 from folium import plugins
 from folium.plugins import MarkerCluster
 
-import streamlit as st
 
 
 # In[ ]:
