@@ -64,6 +64,12 @@ df_coffee = df_coffee_hot.append(df_coffee_iced)
 # Ingrediënten uit lists in kolom halen
 df_coffee_exploded = df_coffee.explode('ingredients')
 
+lijst_ingredienten_totaal = df_coffee_exploded['ingredients'].unique()
+lijst_ingredienten_totaal = pd.DataFrame(lijst_ingredienten_totaal)
+# print(lijst_ingredienten_totaal)
+
+st.dataframe(lijst_ingredienten_totaal)
+
 # Dubbele ingrediënten samenvoegen
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('Steamed Milk', 'Milk')
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('1oz Milk', 'Milk')
@@ -77,12 +83,6 @@ df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replac
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('Blended ice', 'Ice')
 
 df_coffee_exploded = df_coffee_exploded.groupby('ingredients')['title'].count().sort_values(ascending=False).reset_index()
-
-lijst_ingredienten_totaal = df_coffee_exploded['ingredients'].unique()
-lijst_ingredienten_totaal = pd.DataFrame(lijst_ingredienten_totaal)
-# print(lijst_ingredienten_totaal)
-
-st.dataframe(lijst_ingredienten_totaal)
 
 fig1 = px.bar(df_coffee_exploded, x='ingredients', y='title', text='title')
 fig1.update_layout( 
