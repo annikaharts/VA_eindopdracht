@@ -27,13 +27,6 @@ from streamlit_folium import folium_static
 
 from PIL import Image
 
-[theme]
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
-
 st.title('2022-2023 sem-1 VA: Dashboard')
 st.header('Starbucks')
 st.subheader('Annika & Estelle')
