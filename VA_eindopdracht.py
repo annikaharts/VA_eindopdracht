@@ -227,7 +227,7 @@ aantal_drinks_per_catergorie = starbucks_drinkMenu.groupby(['Beverage_category']
 fig4 = px.bar(aantal_drinks_per_catergorie, x='Beverage_category', y='Beverage_prep', text = "Beverage_prep")
 
 fig4.update_layout( 
-    title="<b>Het aantal drankjes per drankcategorie</b>",
+    title="<b>Het aantal drankjes en formaten beschikbaar per drankcategorie</b>",
     yaxis_title="Aantal",
     xaxis_title="Drankcategorie"
     )
