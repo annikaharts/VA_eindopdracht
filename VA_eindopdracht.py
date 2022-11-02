@@ -271,9 +271,7 @@ st.plotly_chart(fig6)
 
 # In[26]:
 
-st.markdown('In onderstaand figuur is er onderzoek gedaan naar de spreiding van de suiker per soort drankje. Doormiddel van de dropdown functie kan er per dranksoort de spreiding van het aantal suiker in grammen vergeleken worden.')
-
-Hieruit blijkt dat bepaalde drankjes een hele grote spreiding hebben t.o.v. andere drankjes. Dit kan te maken hebben dat ieder drankje uit andere ingrediënten bestaat.
+st.markdown('In onderstaand figuur is er onderzoek gedaan naar de spreiding van de suiker per soort drankje. Doormiddel van de dropdown functie kan er per dranksoort de spreiding van het aantal suiker in grammen vergeleken worden. Hieruit blijkt dat bepaalde drankjes een hele grote spreiding hebben t.o.v. andere drankjes. Dit kan te maken hebben dat ieder drankje uit andere ingrediënten bestaat.')
 df = px.data.tips()
 fig7 = px.box(starbucks_drinkMenu, 
 x=" Sugars (g)", 
