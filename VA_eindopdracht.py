@@ -75,7 +75,7 @@ df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replac
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('Long pulled espresso', 'Espresso')
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('Blended ice', 'Ice')
 df_coffee_exploded = df_coffee_exploded.groupby('ingredients')['title'].count().sort_values(ascending=False).reset_index()
-fig1 = px.bar(df_coffee_exploded, x='ingredients', y='title', text='title', color_discrete_sequence=px.colors.qualitative.Antique)
+fig1 = px.bar(df_coffee_exploded, x='ingredients', y='title', text='title', color_discrete_sequence=px.colors.qualitative.Antique, color=Antique[2])
 fig1.update_layout( 
     title="<b>Het aantal drankjes bestaande uit ingrediënten</b>",
     yaxis_title="Aantal verschillende drankjes",
