@@ -185,7 +185,7 @@ st.plotly_chart(fig3)
 
 
 aantal_drinks_per_catergorie = starbucks_drinkMenu.groupby(['Beverage_category'])['Beverage_prep'].count().sort_values(ascending=False).reset_index()
-fig4 = px.bar(aantal_drinks_per_catergorie, x='Beverage_category', y='Beverage_prep', text = "Beverage_prep", color_discrete_sequence=px.colors.qualitative.Antique)
+fig4 = px.bar(aantal_drinks_per_catergorie, x='Beverage_category', y='Beverage_prep', text = "Beverage_prep", color_discrete_sequence=px.colors.qualitative.Dark2)
 fig4.update_layout( 
     title="<b>Het aantal drankjes en formaten beschikbaar per drankcategorie</b>",
     yaxis_title="Aantal",
