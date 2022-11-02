@@ -398,9 +398,9 @@ plt.show()
 image1 = Image.open('Regressie ZOUT.PNG')
 col1, mid, col2 = st.beta_columns([1,1,20])
 with col1:
-    st.pyplot(fig11)
+    st.pyplot(fig11, figsize=(5, 5))
 with col2:
-    st.image(image1, caption='Summary zout')
+    st.image(image1, caption='Summary zout', width=60)
 
 st.markdown('Vervolgens zijn we gaan kijken naar de samenhang tussen de hoeveelheid suikers en het aantal calorieën. Hier is duidelijk wel een correlatie in waar te nemen. Het is duidelijk te zien dat hoe meer suiker er in een drankje zit, hoe hoger het aantal calorieën dat deze bevat is. Ook de R-squared is in dit geval hoog, dus bij een model voor de berekening en voorspelling van het aantal calorieën, zou de variabele suiker erg goed gebruikt kunnen worden. Dit dus in tegenstelling tot die van zout.')
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
