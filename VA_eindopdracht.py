@@ -205,6 +205,8 @@ print(starbucks_drinkMenu.dtypes)
 
 
 # data students performance
+st.markdown('In onderstaand figuur zijn per categorie drankjes van Starbucks alle drankjes weergegeven. De count die hierbij staat geeft het aantal formaten weer die mogelijk zijn per drankje.')
+
 df = px.data.tips()
 fig3 = px.sunburst(starbucks_drinkMenu,
                   path=['Beverage_category', 'Beverage'])
@@ -215,8 +217,6 @@ fig3.update_layout(title_text="<b> Starbucks drankjes per catergorie<b>",
                  )
 fig3.show()
 st.plotly_chart(fig3)
-
-st.markdown('In onderstaand figuur zijn per categorie drankjes van Starbucks alle drankjes weergegeven. De count die hierbij staat geeft het aantal formaten weer die mogelijk zijn per drankje.')
 
 
 # In[22]:
