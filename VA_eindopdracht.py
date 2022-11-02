@@ -384,7 +384,6 @@ st.pyplot(fig10)
 st.subheader("Regressie op variabelen ingredienten")
 
 st.markdown('Allereerst hebben we gekeken naar de samenhang tussen zout en het aantal calorieën. Hierbij is geen duidelijke correlatie op te maken. Wel lijkt het door de trendlijn zo dat de hoeveelheid calorieën toeneemt naarmate de hoeveelheid zout toeneemt. De R-squared van 0.150 (zie onderstaand schema) bevestigt dit, want de variabele zout voegt niet veel toe aan het model met deze variabele. Er is dus weinig samenhang te vinden tussen de twee variabelen.')
-
 regressie1 = ols(formula="Calories ~ Sodium", data=starbucks_drinkMenu).fit()
 explanatory_data1 = pd.DataFrame({"Sodium": np.arange(40, 60)})
 prediction_data1 = explanatory_data1.assign(Calories=regressie1.predict(explanatory_data1))
@@ -394,15 +393,16 @@ ax2 = sns.scatterplot(x="Sodium", y="Calories",data=prediction_data1,color="red"
 ax1.set(xlabel='Zout (g)', ylabel="Aantal calorieën")
 ax1.set(title="Voorspelling aantal calorieën per hoeveelheid zout in grammen")
 plt.show()
-st.pyplot(fig11)
 # print(regressie1.summary())
 # regressie1.summary(print_fn=lambda x: st.text(x))
 image1 = Image.open('Regressie ZOUT.PNG')
-st.image(image1, caption='Summary zout')
+col1, mid, col2 = st.beta_columns([1,1,20])
+with col1:
+    st.pyplot(fig11)
+with col2:
+    st.image(image1, caption='Summary zout')
 
 st.markdown('Vervolgens zijn we gaan kijken naar de samenhang tussen de hoeveelheid suikers en het aantal calorieën. Hier is duidelijk wel een correlatie in waar te nemen. Het is duidelijk te zien dat hoe meer suiker er in een drankje zit, hoe hoger het aantal calorieën dat deze bevat is. Ook de R-squared is in dit geval hoog, dus bij een model voor de berekening en voorspelling van het aantal calorieën, zou de variabele suiker erg goed gebruikt kunnen worden. Dit dus in tegenstelling tot die van zout.')
-
-
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
 explanatory_data2 = pd.DataFrame({"Sugars": np.arange(83, 100)})
 prediction_data2 = explanatory_data2.assign(Calories=regressie2.predict(explanatory_data2))
