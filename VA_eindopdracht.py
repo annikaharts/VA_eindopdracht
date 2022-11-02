@@ -383,6 +383,7 @@ st.pyplot(fig10)
 # In[32]:
 st.subheader("Regressie op variabelen ingredienten")
 
+st.markdown('Allereerst hebben we gekeken naar de samenhang tussen zout en het aantal calorieën. Hierbij is geen duidelijke correlatie op te maken. Wel lijkt het door de trendlijn zo dat de hoeveelheid calorieën toeneemt naarmate de hoeveelheid zout toeneemt. De R-squared van 0.150 (zie onderstaand schema) bevestigt dit, want de variabele zout voegt niet veel toe aan het model met deze variabele. Er is dus weinig samenhang te vinden tussen de twee variabelen.')
 
 regressie1 = ols(formula="Calories ~ Sodium", data=starbucks_drinkMenu).fit()
 explanatory_data1 = pd.DataFrame({"Sodium": np.arange(40, 60)})
@@ -398,6 +399,8 @@ st.pyplot(fig11)
 # regressie1.summary(print_fn=lambda x: st.text(x))
 image1 = Image.open('Regressie ZOUT.PNG')
 st.image(image1, caption='Summary zout')
+
+st.markdown('Vervolgens zijn we gaan kijken naar de samenhang tussen de hoeveelheid suikers en het aantal calorieën. Hier is duidelijk wel een correlatie in waar te nemen. Het is duidelijk te zien dat hoe meer suiker er in een drankje zit, hoe hoger het aantal calorieën dat deze bevat is. Ook de R-squared is in dit geval hoog, dus bij een model voor de berekening en voorspelling van het aantal calorieën, zou de variabele suiker erg goed gebruikt kunnen worden. Dit dus in tegenstelling tot die van zout.')
 
 
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
