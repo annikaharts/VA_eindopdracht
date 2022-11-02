@@ -240,7 +240,7 @@ st.plotly_chart(fig4)
 
 # In[23]:
 
-
+st.markdown('In de figuur hieronder is er onderzoek gedaan naar de spreiding van de calorieën per soort drankje. Hieruit blijkt dat bepaalde drankjes een hele grote spreiding hebben t.o.v. andere drankjes. Dit kan te maken hebben met dat ieder drankje uit andere ingrediënten bestaat.')
 #starbucks_drinkMenu.sort_values("Calories", ascending=False)
 fig5 = px.box(starbucks_drinkMenu, x='Calories', y='Beverage')
 fig5.update_layout( 
@@ -255,7 +255,7 @@ st.plotly_chart(fig5)
 
 # In[25]:
 
-
+st.markdown('Ook is er een histogram gemaakt van het aantal calorieën van alle drankjes. Hieruit blijkt dat alles bijna mooi normaal verdeeld is. Maar er is wel een uitschieter in de max waarde, dat is te zien in de boxplot boven het histogram.')
 df = px.data.tips()
 fig6 = px.histogram(starbucks_drinkMenu, x="Calories", marginal="box")
 
@@ -271,7 +271,9 @@ st.plotly_chart(fig6)
 
 # In[26]:
 
+st.markdown('In onderstaand figuur is er onderzoek gedaan naar de spreiding van de suiker per soort drankje. Doormiddel van de dropdown functie kan er per dranksoort de spreiding van het aantal suiker in grammen vergeleken worden.')
 
+Hieruit blijkt dat bepaalde drankjes een hele grote spreiding hebben t.o.v. andere drankjes. Dit kan te maken hebben dat ieder drankje uit andere ingrediënten bestaat.
 df = px.data.tips()
 fig7 = px.box(starbucks_drinkMenu, 
 x=" Sugars (g)", 
@@ -308,7 +310,7 @@ st.plotly_chart(fig7)
 
 # In[27]:
 
-
+st.markdown('Daarnaast is er een histogram gemaakt van de hoeveeleid suiker in grammen van alle drankjes. Hieruit blijkt dat er geen specifieke verdeling bestaat bij deze variabele. Dit kan te maken hebben met het verschil in hoeveelheid suiker in grammen dat per drankje wordt toegevoegd.')
 df = px.data.tips()
 fig8 = px.histogram(starbucks_drinkMenu, x=" Sugars (g)", marginal="box")
 
@@ -398,13 +400,9 @@ plt.show()
 image1 = Image.open('Regressie ZOUT.PNG')
 col1, col2 = st.columns([1,1])
 with col1:
-    st.pyplot(fig11, 
-              #figsize=(5, 5)
-             )
+    st.pyplot(fig11)
 with col2:
-    st.image(image1, caption='Summary zout'
-             #, width=60
-            )
+    st.image(image1, caption='Summary zout')
 
 st.markdown('Vervolgens zijn we gaan kijken naar de samenhang tussen de hoeveelheid suikers en het aantal calorieën. Hier is duidelijk wel een correlatie in waar te nemen. Het is duidelijk te zien dat hoe meer suiker er in een drankje zit, hoe hoger het aantal calorieën dat deze bevat is. Ook de R-squared is in dit geval hoog, dus bij een model voor de berekening en voorspelling van het aantal calorieën, zou de variabele suiker erg goed gebruikt kunnen worden. Dit dus in tegenstelling tot die van zout.')
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
@@ -416,11 +414,14 @@ ax4 = sns.scatterplot(x="Sugars", y="Calories",data=prediction_data2,color="red"
 ax3.set(xlabel='Suiker (g)', ylabel="Aantal calorieën")
 ax3.set(title="Voorspelling aantal calorieën per hoeveelheid suiker in grammen")
 plt.show()
-st.pyplot(fig12)
 # print(regressie2.summary())
 # regressie2.summary(print_fn=lambda x: st.text(x))
 image2 = Image.open('Regressie SUIKER.PNG')
-st.image(image2, caption='Summary suiker')
+col1, col2 = st.columns([1,1])
+with col1:
+    st.pyplot(fig12)
+with col2:
+    st.image(image2, caption='Summary suiker')
 
 st.header('Bronnen')
 st.markdown('API populairste koffie-drankjes: https://sampleapis.com/api-list')
