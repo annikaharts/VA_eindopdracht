@@ -107,7 +107,7 @@ fig2 = px.bar(df_world_count, x='Country',
                  "Country": "Landcode"
              },
                 title="<b>Top 10 landen met de meeste Starbucks Stores</b>",
-              color_discrete_sequence=px.colors.qualitative.Antique
+              color_discrete_sequence=px.colors.qualitative.Dark2
             )
 fig2.show()
 st.plotly_chart(fig2)
@@ -173,7 +173,7 @@ st.markdown('In onderstaand figuur zijn per categorie drankjes van Starbucks all
 df = px.data.tips()
 fig3 = px.sunburst(starbucks_drinkMenu,
                   path=['Beverage_category', 'Beverage'],
-                  color_discrete_sequence=px.colors.qualitative.Antique)
+                  color_discrete_sequence=px.colors.qualitative.Dark2)
 fig3.update_layout(title_text="<b> Starbucks drankjes per catergorie<b>", 
              #     titlefont={'size': 24, 'family':'Serif'},
                   width=750, 
@@ -196,7 +196,7 @@ st.plotly_chart(fig4)
 
 
 st.markdown('In de figuur hieronder is er onderzoek gedaan naar de spreiding van de calorieën per soort drankje. Hieruit blijkt dat bepaalde drankjes een hele grote spreiding hebben t.o.v. andere drankjes. Dit kan te maken hebben met dat ieder drankje uit andere ingrediënten bestaat.')
-fig5 = px.box(starbucks_drinkMenu, x='Calories', y='Beverage', color_discrete_sequence=px.colors.qualitative.Antique)
+fig5 = px.box(starbucks_drinkMenu, x='Calories', y='Beverage', color_discrete_sequence=px.colors.qualitative.Dark2)
 fig5.update_layout( 
     title="<b>Het aantal calorieën per drankje</b>",
     yaxis_title="Type drankje",
@@ -208,7 +208,7 @@ st.plotly_chart(fig5)
 
 st.markdown('Ook is er een histogram gemaakt van het aantal calorieën van alle drankjes. Hieruit blijkt dat alles bijna mooi normaal verdeeld is. Maar er is wel een uitschieter in de max waarde, dat is te zien in de boxplot boven het histogram.')
 df = px.data.tips()
-fig6 = px.histogram(starbucks_drinkMenu, x="Calories", marginal="box", color_discrete_sequence=px.colors.qualitative.Antique)
+fig6 = px.histogram(starbucks_drinkMenu, x="Calories", marginal="box", color_discrete_sequence=px.colors.qualitative.Dark2)
 fig6.update_layout( 
     title="<b>Spreiding calorieën</b>",
     yaxis_title="Frequentie",
@@ -224,7 +224,7 @@ df = px.data.tips()
 fig7 = px.box(starbucks_drinkMenu, 
 x=" Sugars (g)", 
 color='Beverage_category', 
-hover_name = 'Beverage_category', color_discrete_sequence=px.colors.qualitative.Antique)
+hover_name = 'Beverage_category', color_discrete_sequence=px.colors.qualitative.Dark2)
 
 dropdown_buttons = [
 {'label': "Totaal", 'method': "update", 'args': [{"visible": [True,True,True,True,True,True,True,True,True]}, {'title': 'Spreiding calorieën per categorie drankje'}]},
@@ -254,7 +254,7 @@ st.plotly_chart(fig7)
 
 st.markdown('Daarnaast is er een histogram gemaakt van de hoeveeleid suiker in grammen van alle drankjes. Hieruit blijkt dat er geen specifieke verdeling bestaat bij deze variabele. Dit kan te maken hebben met het verschil in hoeveelheid suiker in grammen dat per drankje wordt toegevoegd.')
 df = px.data.tips()
-fig8 = px.histogram(starbucks_drinkMenu, x=" Sugars (g)", marginal="box", color_discrete_sequence=px.colors.qualitative.Antique)
+fig8 = px.histogram(starbucks_drinkMenu, x=" Sugars (g)", marginal="box", color_discrete_sequence=px.colors.qualitative.Dark2)
 fig8.update_layout( 
     title="<b>Spreiding suiker</b>",
     yaxis_title="Frequentie",
@@ -273,7 +273,7 @@ symbol="Beverage_category",
 trendline='ols',
 trendline_scope="overall", 
 labels={ "Overall Trendline ": "Trendlijn" },
-color_discrete_sequence=px.colors.qualitative.Antique)
+color_discrete_sequence=px.colors.qualitative.Dark2)
 
 dropdown_buttons = [
 {'label': "Totaal", 'method': "update", 'args': [{"visible": [True,True,True,True,True,True,True,True,True]}, {'title': 'Spreiding calorieën per categorie drankje'}]},
