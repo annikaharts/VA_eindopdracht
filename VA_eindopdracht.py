@@ -70,6 +70,11 @@ lijst_ingredienten_totaal = pd.DataFrame(lijst_ingredienten_totaal)
 
 st.dataframe(lijst_ingredienten_totaal)
 
+st.markdown('Van de dataset met de meest populaire koffiesoorten van koude en warme dranken is één dataset gemaakt. Alle ingrediënten staan op een rijtje, maar sommige kwamen overeen, slechts met een andere hoeveelheid of bewerking. Deze zijn samengevoegd om een beeld te creeeren van de meest benodigde ingrediënten. Deze zijn te zien in het staafdiagram hieronder.
+            
+            
+            ')
+
 # Dubbele ingrediënten samenvoegen
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('Steamed Milk', 'Milk')
 df_coffee_exploded['ingredients'] = df_coffee_exploded['ingredients'].str.replace('1oz Milk', 'Milk')
