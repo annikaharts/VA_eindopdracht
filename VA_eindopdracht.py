@@ -149,7 +149,7 @@ folium.LayerControl().add_to(mymap);
 st_data = folium_static(mymap)
 
 # # Starbucks ingredienten
-st.subheader("Starbucks ingredienten")
+st.subheader("Starbucks ingrediënten")
 
 starbucks_drinkMenu = pd.read_csv('starbucks_drinkMenu_expanded.csv')
 # VERWIJDEREN VAN DUBBELE WAARDES
@@ -258,7 +258,7 @@ fig8 = px.histogram(starbucks_drinkMenu, x=" Sugars (g)", marginal="box", color_
 fig8.update_layout( 
     title="<b>Spreiding suiker</b>",
     yaxis_title="Frequentie",
-    xaxis_title="Suiker")
+    xaxis_title="Suiker (g)")
 fig8.show()
 st.plotly_chart(fig8)
 
@@ -312,7 +312,7 @@ plt.show()
 st.pyplot(fig10)
 
 
-st.subheader("Regressie op variabelen ingredienten")
+st.subheader("Regressie op variabelen ingrediënten")
 st.markdown('Allereerst hebben we gekeken naar de samenhang tussen zout en het aantal calorieën. Hierbij is geen duidelijke correlatie op te maken. Wel lijkt het door de trendlijn zo dat de hoeveelheid calorieën toeneemt naarmate de hoeveelheid zout toeneemt. De R-squared van 0.150 (zie onderstaand schema) bevestigt dit, want de variabele zout voegt niet veel toe aan het model met deze variabele. Er is dus weinig samenhang te vinden tussen de twee variabelen.')
 regressie1 = ols(formula="Calories ~ Sodium", data=starbucks_drinkMenu).fit()
 explanatory_data1 = pd.DataFrame({"Sodium": np.arange(40, 60)})
