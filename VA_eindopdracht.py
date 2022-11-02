@@ -99,7 +99,7 @@ st.plotly_chart(fig1)
 # # Map
 st.subheader("Map")
 # In[4]:
-
+st.markdown('Om de map te maken is er gebruik gemaakt van de directory.csv bestand. Hierin zijn er onder andere gegevens te vinden over; Store Number, Store Name, Ownership Type, Street Address,Country, Coordinaten etc.')
 
 world_wide = pd.read_csv('directory.csv')
 world_wide.notnull().sum()
@@ -115,6 +115,8 @@ st.dataframe(wereld_dataset)
 
 df_world_count = world_wide.groupby(['Country'], dropna=False)['Postcode'].count().sort_values(ascending=False).reset_index()
 df_world_count = df_world_count.head(10)
+
+st.markdown('In de figuur hieronder is een staafdiagram geschetst met de top 10 landen met de meeste Starbucks stores. Hieruit valt op te merken dat de koploper US 13 duizend Starbucks stores heeft. Op de tweede plek staat China met ongeveer 2200 store. Dat is aanzienlijk minder dan de koploper.')
 
 # print(df_world_count)
 fig2 = px.bar(df_world_count, x='Country', 
@@ -146,7 +148,7 @@ df_points = pd.DataFrame(points, columns=['LAT','LNG','COUNTRY','NAME','TYPE'])
 
 
 # In[31]:
-
+st.markdown('Om de map te maken is er gebruik gemaakt van de gevraagde gegevens, deze zijn vervolgens omgezet in een gecombined zip die in een nieuwe lijst wordt gezet. Dit is vervolgens door de packages Folium ondersteund. Doormiddel van de checkbox kunnen de Starbucks Stores in Nederland of de wereld aan of uit worden gezet. Door op de pop-up te klikken komt er informatie ter beschikking over de store gegevens.')
 
 mymap = folium.Map(location=[52.489797, 4.879391], 
                tiles='CartoDB positron',
