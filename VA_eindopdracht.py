@@ -355,8 +355,8 @@ fig9.update_layout(
             'buttons': dropdown_buttons
             }]},
     title="<b>Spreiding calorieën per categorie drankje</b>",
-    yaxis_title="Aantal",
-    xaxis_title="Calorieën",
+    yaxis_title="Suikers (g)",
+    xaxis_title="Aantal calorieën",
     legend_title="Categorie drankje"
 )
 
@@ -396,11 +396,15 @@ plt.show()
 # print(regressie1.summary())
 # regressie1.summary(print_fn=lambda x: st.text(x))
 image1 = Image.open('Regressie ZOUT.PNG')
-col1, mid, col2 = st.beta_columns([1,1,20])
+col1, col2 = st.columns([1,1])
 with col1:
-    st.pyplot(fig11, figsize=(5, 5))
+    st.pyplot(fig11, 
+              #figsize=(5, 5)
+             )
 with col2:
-    st.image(image1, caption='Summary zout', width=60)
+    st.image(image1, caption='Summary zout'
+             #, width=60
+            )
 
 st.markdown('Vervolgens zijn we gaan kijken naar de samenhang tussen de hoeveelheid suikers en het aantal calorieën. Hier is duidelijk wel een correlatie in waar te nemen. Het is duidelijk te zien dat hoe meer suiker er in een drankje zit, hoe hoger het aantal calorieën dat deze bevat is. Ook de R-squared is in dit geval hoog, dus bij een model voor de berekening en voorspelling van het aantal calorieën, zou de variabele suiker erg goed gebruikt kunnen worden. Dit dus in tegenstelling tot die van zout.')
 regressie2 = ols(formula="Calories ~ Sugars", data=starbucks_drinkMenu).fit()
