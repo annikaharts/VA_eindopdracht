@@ -324,8 +324,7 @@ st.plotly_chart(fig8)
 
 # In[28]:
 
-
-
+st.markdown('In de onderstaande figuur zijn de variabalen calorieën en suiker tegen elkaar uitgezet in een scatterplot. Doormiddel van dit onderzoek willen wij aantonen of er aan de voorwaarde wordt voldaan van lineaire regressie. Er zal aangetoond worden dat er een verband is tussen calorieën en suiker in de drankjes van Starbucks. Uit de scatterplot kan opgemerkt worden dat alle punten rondom de trendlijn bevinden. Er kan gezegd worden dat suiker lineair afhankelijk is van calorieën en dat het dus aan een van de voorwaardes voldoet van lineaire regressie.')
 fig9 = px.scatter(starbucks_drinkMenu, 
 x="Calories", 
 y=" Sugars (g)", 
@@ -346,7 +345,6 @@ dropdown_buttons = [
 {'label': "Smoothies", 'method': "update", 'args': [{"visible": [False,False,False,False,False,True,False,False,False]}, {'title': "Spreiding calorieën per categorie drankje"}]},
 {'label': "Frappucino's", 'method': "update", 'args': [{"visible": [False,False,False,False,False,False,True,True,True]}, {'title': "Spreiding calorieën per categorie drankje"}]}
 ]
-
 
 fig9.update_layout(
     {    'updatemenus':[{
