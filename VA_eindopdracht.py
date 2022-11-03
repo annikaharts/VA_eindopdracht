@@ -244,7 +244,7 @@ fig7.update_layout(
             'buttons': dropdown_buttons
             }]},
     title="<b>Spreiding suiker per soort drankje</b>",
-    yaxis_title="Frequentie",
+    yaxis_title=" ",
     xaxis_title="Suiker (g)",
     legend_title="Categorie drankje")
 fig7.show()
