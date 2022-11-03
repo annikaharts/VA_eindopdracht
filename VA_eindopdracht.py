@@ -141,8 +141,8 @@ for row in df_points.itertuples():
     marker = folium.Marker(location=location, popup=popup, icon=icon)
     if row[3] == 'NL':
         mCluster_nl.add_child(marker)
-#     elif row[3] != 'NL':
-#         mCluster_wereld.add_child(marker)
+    elif row[3] != 'NL':
+        mCluster_wereld.add_child(marker)
         
 
 folium.LayerControl().add_to(mymap);
